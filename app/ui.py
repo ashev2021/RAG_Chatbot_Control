@@ -1,5 +1,6 @@
 import gradio as gr
 
+# simple ui using gradio
 def launch_gradio_interface(qa_chain):
     def answer_question(query):
         result = qa_chain({"query": query})
@@ -13,4 +14,5 @@ def launch_gradio_interface(qa_chain):
         description="Ask questions about the loaded document (control.pdf)",
     )
 
-    iface.launch()
+    iface.launch(server_name="0.0.0.0", server_port=7860)
+
