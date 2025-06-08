@@ -1,4 +1,8 @@
 import gradio as gr
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # simple ui using gradio
 def launch_gradio_interface(qa_chain):
@@ -14,5 +18,6 @@ def launch_gradio_interface(qa_chain):
         description="Ask questions about the loaded document (control.pdf)",
     )
 
-    iface.launch(server_name="0.0.0.0", server_port=7860)
+    iface.launch()
+
 
